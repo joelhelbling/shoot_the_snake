@@ -19,6 +19,7 @@ end
 function Bullet:checkCollision(target)
   if self:isCollidingWith(target) then
     self.dead = true
+    game.score = game.score + 1
 
     if target.speed > 0 then
       target.speed = target.speed + 50
