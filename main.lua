@@ -1,30 +1,21 @@
 function love.load()
   Object = require "lib.classic"
   require "lib.image_entity"
-  require "app.player"
-  require "app.enemy"
-  require "app.bullet"
-  require "app.bullets"
+  require "app.game"
 
-  player = Player()
-  enemy = Enemy()
-  bullets = Bullets()
+  game = Game()
 end
 
 function love.update(dt)
-  player:update(dt)
-  enemy:update(dt)
-  bullets:update(dt)
+  game:update(dt)
 end
 
 function love.draw()
-  player:draw()
-  enemy:draw()
-  bullets:draw()
+  game:draw()
 end
 
 function love.keypressed(key)
-  player:keyPressed(key)
+  game.player:keyPressed(key)
 end
 
 function window_width()

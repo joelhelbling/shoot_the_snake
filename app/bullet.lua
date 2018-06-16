@@ -16,10 +16,6 @@ function Bullet:update(dt)
   end
 end
 
-function Bullet:draw()
-  love.graphics.draw(self.image, self.x, self.y)
-end
-
 function Bullet:checkCollision(target)
   if self:isCollidingWith(target) then
     self.dead = true

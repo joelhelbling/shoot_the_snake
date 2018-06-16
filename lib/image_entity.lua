@@ -9,6 +9,10 @@ function ImageEntity:new(image_file, x, y, initial_speed)
   self.height = self.image:getHeight()
 end
 
+function ImageEntity:draw()
+  love.graphics.draw(self.image, self.x, self.y)
+end
+
 function ImageEntity:left()
   return self.x
 end

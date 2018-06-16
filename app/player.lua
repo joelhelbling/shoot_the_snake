@@ -5,8 +5,9 @@ local initial_x = 300
 local initial_y = 20
 local initial_speed = 500
 
-function Player:new()
+function Player:new(bullets)
   Player.super.new(self, image_file, initial_x, initial_y, initial_speed)
+  self.bullets = bullets
 end
 
 function Player:update(dt)
@@ -23,12 +24,8 @@ function Player:update(dt)
   end
 end
 
-function Player:draw()
-  love.graphics.draw(self.image, self.x, self.y)
-end
-
 function Player:keyPressed(key)
   if key == "space" then
-    bullets:fireNewBulletFrom(self)
+    self.bullets:fireNewBulletFrom(self)
   end
 end
