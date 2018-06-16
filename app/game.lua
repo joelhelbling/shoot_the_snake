@@ -6,14 +6,14 @@ function Game:new()
   require "app.bullets"
   require "app.player"
 
-  self.enemy = Enemy()
-  self.bullets = Bullets(self.enemy)
-  self.player = Player(self.bullets)
+  local enemy = Enemy()
+  local bullets = Bullets(enemy)
+  self.player = Player(bullets)
 
   self.entities = {
     self.player,
-    self.enemy,
-    self.bullets
+    enemy,
+    bullets
   }
 end
 
