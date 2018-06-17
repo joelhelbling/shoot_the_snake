@@ -1,13 +1,14 @@
 Bullets = Object:extend()
 
-function Bullets:new()
+function Bullets:new(enemy)
   self.table = {}
+  self.enemy = enemy
 end
 
 function Bullets:update(dt)
   for i,v in ipairs(self.table) do
     v:update(dt)
-    v:checkCollision(enemy)
+    v:checkCollision(self.enemy)
 
     if v.dead then
       table.remove(self.table, i)
