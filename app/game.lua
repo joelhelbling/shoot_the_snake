@@ -6,6 +6,8 @@ function Game:new()
   require "app.bullets"
   require "app.player"
 
+  self.score = 0
+
   local enemy = Enemy()
   local bullets = Bullets(enemy)
   self.player = Player(bullets)
@@ -27,4 +29,5 @@ function Game:draw()
   for i,entity in ipairs(self.entities) do
     entity:draw()
   end
+  love.graphics.print('Score: ' .. self.score, 400, 300)
 end
